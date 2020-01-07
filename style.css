@@ -1,26 +1,17 @@
-body {
-    background-image: url(/img/3156605.jpg);
+#background {
+    background-image: url(img/3156605.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
-.container {
-    display: grid;
-    grid-template-rows: 20% 80%;
-    margin: 0;
-    text-align: center;
-    height: 100vh;
-}
-.title {
-    display: grid;
+h1, h2, h3, h4, p {
     font-family: Oxygen;
-    font-size: 20px;
-    align-content: center;
-    color: white;
 }
-.body {
+.text-uppercase {
+    font-size: 10px;
+}
+.result {
+    margin-top: 50vh; 
+    color: white; 
     font-family: Roboto;
-    background-color: white;
-    margin-left: 300px;
-    margin-right: 300px;
-    margin-bottom: 50px;
+    font-size: 20px;
 }
