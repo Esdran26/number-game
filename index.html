@@ -12,23 +12,24 @@
     <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
-    <main style="height: 100vh;" class="container-fluid p-0 m-0"> 
+    <main style="height: 100vh; width: 98.9%;" class="container-fluid p-0 m-0"> 
         <div class="row justify-content-center align-items-center h-100">
             <div class="col-md-6 p-0 text-center">
                 <h1 style="color: #273c75;">Number Game</h1>
                 <hr class="mb-5">
                 <p class="m-5">Game made by Andrés Vargas, is about typing a number between 1 and 100 and have 5 attempts so that the number you type is the one chosen by the server.</p>
                 <h2 class="m-4" style="color: #487eb0;">Please, enter a number.</h2>
-                <form class="m-5" action="#" method="post">
+                <form id="submitForm" class="m-5">
                     <div class="form-group">
-                        <input type="number" name="number" id="number" class="form-control" aria-describedby="numberHelp" placeholder="Enter Number">
-                        <small id="numberHelp" class="text-uppercase form-text text-muted">The number you are looking for is from 1 to 100</small>
+                        <input type="number" name="number" id="inputNumber" class="form-control" aria-describedby="numberHelp" placeholder="Enter Number">
+                        <small id="numberHelp" class="text-uppercase form-text">The number you are looking for is from 1 to 100</small>
                     </div>
                     <input type="submit" value="Play!" class="btn btn-primary btn-block">
+                    <div id="attempts"></div>
                 </form>
             </div>
             <div id="background" class="col-md-6 p-0 h-100 text-center">
-                <p class="result">ifghjsahdgfs</p>
+                
             </div>
         </div>
     </main>
