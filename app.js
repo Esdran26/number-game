@@ -30,22 +30,22 @@ class UI {
         attempts = attempts - 1;
         if(attempts === 4 ||  attempts === 5) {
             divAttempts.innerHTML = `
-                <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2">Numero de intentos: ${attempts}</p>
+                <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2">number of attemps: ${attempts}</p>
             `;
         }
         else if(attempts === 3) {
             divAttempts.innerHTML = `
-                <p style="color: #ff9f43; font-size: 20px; font-weight: bold;" class="mt-2">Numero de intentos: ${attempts}</p>
+                <p style="color: #ff9f43; font-size: 20px; font-weight: bold;" class="mt-2">number of attemps: ${attempts}</p>
             `;
         }
         else if(attempts === 1 || attempts === 2) {
             divAttempts.innerHTML = `
-                <p style="color: #ee5253; font-size: 20px; font-weight: bold;" class="mt-2">Numero de intentos: ${attempts}</p>
+                <p style="color: #ee5253; font-size: 20px; font-weight: bold;" class="mt-2">number of attemps: ${attempts}</p>
             `;
         }
         else if(attempts === 0) {
             divAttempts.innerHTML = `
-                <p style="color: #222f3e; font-size: 20px; font-weight: bold;" class="mt-2">Fin del Juego</p>
+                <p style="color: #222f3e; font-size: 20px; font-weight: bold;" class="mt-2">Game Over</p>
             `;
         }
     }
