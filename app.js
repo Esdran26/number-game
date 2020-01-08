@@ -30,7 +30,7 @@ class UI {
         attempts = attempts - 1;
         if(attempts === 4 ||  attempts === 5) {
             divAttempts.innerHTML = `
-                <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2">number of attemps: ${attempts}</p>
+                <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2 ">number of attemps: ${attempts}</p>
             `;
         }
         else if(attempts === 3) {
