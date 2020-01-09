@@ -32,36 +32,22 @@ class UI {
         attempts = attempts - 1;
         if(attempts === 4 ||  attempts === 5) {
             divAttempts.innerHTML = `
-<<<<<<< HEAD
-                <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2 ">number of attemps: ${attempts}</p>
-=======
                 <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2">Remaining attempts: ${attempts}</p>
->>>>>>> test
             `;
         }
         else if(attempts === 3) {
             divAttempts.innerHTML = `
-<<<<<<< HEAD
-                <p style="color: #ff9f43; font-size: 20px; font-weight: bold;" class="mt-2">number of attemps: ${attempts}</p>
-=======
                 <p style="color: #ff9f43; font-size: 20px; font-weight: bold;" class="mt-2">Remaining attempts: ${attempts}</p>
->>>>>>> test
             `;
         }
         else if(attempts === 1 || attempts === 2) {
             divAttempts.innerHTML = `
-<<<<<<< HEAD
-                <p style="color: #ee5253; font-size: 20px; font-weight: bold;" class="mt-2">number of attemps: ${attempts}</p>
-=======
                 <p style="color: #ee5253; font-size: 20px; font-weight: bold;" class="mt-2">Remaining attempts: ${attempts}</p>
->>>>>>> test
             `;
         }
         else if(attempts === 0) {
             divAttempts.innerHTML = `
                 <p style="color: #222f3e; font-size: 20px; font-weight: bold;" class="mt-2">Game Over</p>
-<<<<<<< HEAD
-=======
             `;
             const inputNumber = document.getElementById('inputNumber');
             inputNumber.disabled = 'true';
@@ -103,7 +89,6 @@ class UI {
             const buttonSubmit = document.getElementById('buttonSubmit').remove();
             divChangeSubmit.innerHTML = `
                 <input class="btn btn-primary btn-block" type="button" value="TRY AGAIN!" onclick="location.reload()"/>
->>>>>>> test
             `;
         }
     }
