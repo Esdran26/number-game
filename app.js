@@ -60,7 +60,12 @@ class UI {
     showMessageServer(number) {
         const divBackground = document.getElementById('background');
         console.log(number);
-        if(number.inputNumber < number.randomNumber) {
+        if(number.inputNumber <= 0 || number.inputNumber > 100){
+            divBackground.innerHTML = `
+                <p class="result">Invalid Number!</p>
+            `;
+        }
+        else if(number.inputNumber < number.randomNumber) {
             divBackground.innerHTML = `
                 <p class="result">The number must be greater</p>
             `;
