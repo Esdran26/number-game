@@ -32,17 +32,17 @@ class UI {
         attempts = attempts - 1;
         if(attempts === 4 ||  attempts === 5) {
             divAttempts.innerHTML = `
-                <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2">Number of attempts: ${attempts}</p>
+                <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2">Remaining attempts: ${attempts}</p>
             `;
         }
         else if(attempts === 3) {
             divAttempts.innerHTML = `
-                <p style="color: #ff9f43; font-size: 20px; font-weight: bold;" class="mt-2">Number of attempts: ${attempts}</p>
+                <p style="color: #ff9f43; font-size: 20px; font-weight: bold;" class="mt-2">Remaining attempts: ${attempts}</p>
             `;
         }
         else if(attempts === 1 || attempts === 2) {
             divAttempts.innerHTML = `
-                <p style="color: #ee5253; font-size: 20px; font-weight: bold;" class="mt-2">Number of attempts: ${attempts}</p>
+                <p style="color: #ee5253; font-size: 20px; font-weight: bold;" class="mt-2">Remaining attempts: ${attempts}</p>
             `;
         }
         else if(attempts === 0) {
@@ -73,6 +73,22 @@ class UI {
         else if(number.inputNumber > number.randomNumber) {
             divBackground.innerHTML = `
                 <p class="result">The number must be smaller</p>
+            `;
+        }
+        else {
+            const divAttempts = document.getElementById('attempts');
+            const divChangeSubmit = document.getElementById('changeSubmit');
+            divBackground.innerHTML = `
+                <p class="result">You've won</p>
+            `;
+            divAttempts.innerHTML = `
+                <p style="color: #222f3e; font-size: 20px; font-weight: bold;" class="mt-2">Game Over</p>
+            `;
+            const inputNumber = document.getElementById('inputNumber');
+            inputNumber.disabled = 'true';
+            const buttonSubmit = document.getElementById('buttonSubmit').remove();
+            divChangeSubmit.innerHTML = `
+                <input class="btn btn-primary btn-block" type="button" value="TRY AGAIN!" onclick="location.reload()"/>
             `;
         }
     }
