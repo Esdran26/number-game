@@ -70,6 +70,11 @@ class UI {
                 <p class="result">The number must be greater</p>
             `;
         }
+        else if(number.inputNumber > number.randomNumber) {
+            divBackground.innerHTML = `
+                <p class="result">The number must be smaller</p>
+            `;
+        }
     }
     resetForm() {
         document.getElementById('submitForm').reset();
