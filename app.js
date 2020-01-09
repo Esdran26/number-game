@@ -12,7 +12,7 @@ class UI {
     //Methods
     getInputNumber(number) {
         if(number.inputNumber <= 0 || number.inputNumber > 100) {
-            this.showMessage('Number invalid!', '#ff7675');
+            this.showMessage('Invalid number!', '#ff7675');
         }
         else {
             this.showMessage('The number you are looking for is from 1 to 100', '#222f3e');
@@ -27,25 +27,32 @@ class UI {
     }
     showMessageAttempts() {
         const divAttempts = document.getElementById('attempts');
+        const divChangeSubmit = document.getElementById('changeSubmit');
         attempts = attempts - 1;
         if(attempts === 4 ||  attempts === 5) {
             divAttempts.innerHTML = `
-                <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2">Numero de intentos: ${attempts}</p>
+                <p style="color: #10ac84; font-size: 20px; font-weight: bold;" class="mt-2">Number of attempts: ${attempts}</p>
             `;
         }
         else if(attempts === 3) {
             divAttempts.innerHTML = `
-                <p style="color: #ff9f43; font-size: 20px; font-weight: bold;" class="mt-2">Numero de intentos: ${attempts}</p>
+                <p style="color: #ff9f43; font-size: 20px; font-weight: bold;" class="mt-2">Number of attempts: ${attempts}</p>
             `;
         }
         else if(attempts === 1 || attempts === 2) {
             divAttempts.innerHTML = `
-                <p style="color: #ee5253; font-size: 20px; font-weight: bold;" class="mt-2">Numero de intentos: ${attempts}</p>
+                <p style="color: #ee5253; font-size: 20px; font-weight: bold;" class="mt-2">Number of attempts: ${attempts}</p>
             `;
         }
         else if(attempts === 0) {
             divAttempts.innerHTML = `
-                <p style="color: #222f3e; font-size: 20px; font-weight: bold;" class="mt-2">Fin del Juego</p>
+                <p style="color: #222f3e; font-size: 20px; font-weight: bold;" class="mt-2">Game Over</p>
+            `;
+            const inputNumber = document.getElementById('inputNumber');
+            inputNumber.disabled = 'true';
+            const buttonSubmit = document.getElementById('buttonSubmit').remove();
+            divChangeSubmit.innerHTML = `
+                <input class="btn btn-primary btn-block" type="button" value="TRY AGAIN!" onclick="location.reload()"/>
             `;
         }
     }
