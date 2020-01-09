@@ -4,8 +4,9 @@ let attempts = 5;
 
 //Classes
 class Number {
-    constructor(inputNumber) {
+    constructor(inputNumber, randomNumber) {
         this.inputNumber = inputNumber;
+        this.randomNumber = randomNumber;
     }
 }
 class UI {
@@ -56,6 +57,15 @@ class UI {
             `;
         }
     }
+    showMessageServer(number) {
+        const divBackground = document.getElementById('background');
+        console.log(number);
+        if(number.inputNumber < number.randomNumber) {
+            divBackground.innerHTML = `
+                <p class="result">The number must be greater</p>
+            `;
+        }
+    }
     resetForm() {
         document.getElementById('submitForm').reset();
     }
@@ -65,9 +75,10 @@ class UI {
 const submitNumber = document.getElementById('submitForm');
 submitNumber.addEventListener('submit', (e) => {
     const valueNumber = document.getElementById('inputNumber').value;
-    const number = new Number(valueNumber);
+    const number = new Number(valueNumber, randomNumber);
     const ui = new UI();
     ui.getInputNumber(number);
+    ui.showMessageServer(number);
     
     e.preventDefault();
 });
