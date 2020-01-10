@@ -1,5 +1,9 @@
 //Variables
 const randomNumber = Math.floor(Math.random() * 100) + 1;
+const divAttempts = document.getElementById('attempts');
+const divChangeSubmit = document.getElementById('changeSubmit');
+const small = document.getElementById('numberHelp');
+const divBackground = document.getElementById('background');
 let attempts = 5;
 
 //Classes
@@ -22,13 +26,10 @@ class UI {
         this.resetForm();
     }
     showMessage(message, color) {
-        const small = document.getElementById('numberHelp');
         small.textContent = message;
         small.style.color = color;
     }
     showMessageAttempts() {
-        const divAttempts = document.getElementById('attempts');
-        const divChangeSubmit = document.getElementById('changeSubmit');
         attempts = attempts - 1;
         if(attempts === 4 ||  attempts === 5) {
             divAttempts.innerHTML = `
@@ -58,7 +59,6 @@ class UI {
         }
     }
     showMessageServer(number) {
-        const divBackground = document.getElementById('background');
         console.log(number);
         if(number.inputNumber <= 0 || number.inputNumber > 100){
             divBackground.innerHTML = `
@@ -76,8 +76,7 @@ class UI {
             `;
         }
         else {
-            const divAttempts = document.getElementById('attempts');
-            const divChangeSubmit = document.getElementById('changeSubmit');
+            
             divBackground.innerHTML = `
                 <p class="result">You've won</p>
             `;
