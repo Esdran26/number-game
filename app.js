@@ -4,13 +4,15 @@ const divAttempts = document.getElementById('attempts');
 const divChangeSubmit = document.getElementById('changeSubmit');
 const small = document.getElementById('numberHelp');
 const divBackground = document.getElementById('background');
+const enteredNumbers = [];
 let attempts = 5;
 
 //Classes
 class Number {
-    constructor(inputNumber, randomNumber) {
+    constructor(inputNumber, randomNumber, enteredNumbers) {
         this.inputNumber = inputNumber;
         this.randomNumber = randomNumber;
+        this.enteredNumbers = enteredNumbers;
     }
 }
 class UI {
@@ -59,25 +61,25 @@ class UI {
         }
     }
     showMessageServer(number) {
-        console.log(number);
+        console.log(number.enteredNumbers);
         if(number.inputNumber <= 0 || number.inputNumber > 100){
-            divBackground.innerHTML = `
+            divBackground.innerHTML += `
                 <p class="result">Invalid Number!</p>
             `;
         }
         else if(number.inputNumber < number.randomNumber) {
-            divBackground.innerHTML = `
+            divBackground.innerHTML += `
                 <p class="result">The number must be greater</p>
             `;
         }
         else if(number.inputNumber > number.randomNumber) {
-            divBackground.innerHTML = `
+            divBackground.innerHTML += `
                 <p class="result">The number must be smaller</p>
             `;
         }
         else {
             
-            divBackground.innerHTML = `
+            divBackground.innerHTML += `
                 <p class="result">You've won</p>
             `;
             divAttempts.innerHTML = `
@@ -100,10 +102,11 @@ class UI {
 const submitNumber = document.getElementById('submitForm');
 submitNumber.addEventListener('submit', (e) => {
     const valueNumber = document.getElementById('inputNumber').value;
-    const number = new Number(valueNumber, randomNumber);
+    enteredNumbers.unshift(valueNumber);
+    const number = new Number(valueNumber, randomNumber, enteredNumbers);
     const ui = new UI();
     ui.getInputNumber(number);
     ui.showMessageServer(number);
-    
+
     e.preventDefault();
 });
