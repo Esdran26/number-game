@@ -3,6 +3,5 @@
 Technologies:
 
 * HTML
-* CSS
-* BOOTSTRAP 4 (Framework)
+* CSS Grid
 * JavaScript (Object Orient Programming)
