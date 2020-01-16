@@ -1,4 +1,4 @@
-# A simple number game built with JavaScript
+# A simple number game built with JavaScript.
 
 Technologies:
 
