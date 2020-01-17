@@ -4,6 +4,7 @@ const divAttempts = document.getElementById('attempts');
 const divChangeSubmit = document.getElementById('changeSubmit');
 const small = document.getElementById('numberHelp');
 const divBackground = document.getElementById('background');
+const divShowEnteredNumbers = document.getElementById('showEnteredNumbers');
 const enteredNumbers = [];
 let attempts = 5;
 
@@ -61,7 +62,6 @@ class UI {
         }
     }
     showMessageServer(number) {
-        console.log(number.enteredNumbers);
         if(number.inputNumber <= 0 || number.inputNumber > 100){
             divBackground.innerHTML += `
                 <p class="result">Invalid Number!</p>
@@ -93,6 +93,15 @@ class UI {
             `;
         }
     }
+    showMessageEnteredNumbers(number) {
+        console.log(number);
+            enteredNumbers.unshift(number.inputNumber);
+            enteredNumbers.forEach(enteredNumber => {
+                divShowEnteredNumbers.innerHTML += `
+                    <p style="margin: 1rem">${enteredNumber}</p>
+                `;
+            });
+    }
     resetForm() {
         document.getElementById('submitForm').reset();
     }
@@ -102,11 +111,11 @@ class UI {
 const submitNumber = document.getElementById('submitForm');
 submitNumber.addEventListener('submit', (e) => {
     const valueNumber = document.getElementById('inputNumber').value;
-    enteredNumbers.unshift(valueNumber);
     const number = new Number(valueNumber, randomNumber, enteredNumbers);
     const ui = new UI();
     ui.getInputNumber(number);
     ui.showMessageServer(number);
+    ui.showMessageEnteredNumbers(number);
 
     e.preventDefault();
 });
