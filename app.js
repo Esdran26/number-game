@@ -59,7 +59,6 @@ class UI {
         }
     }
     showMessageServer(number) {
-        console.log(number);
         if(number.inputNumber <= 0 || number.inputNumber > 100){
             divBackground.innerHTML = `
                 <p class="result">Invalid Number!</p>
